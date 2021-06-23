@@ -1,34 +1,36 @@
 class MoviesController < ApplicationController
-  # def movie_params
-  #   input_value = params["movie"]
-  #   render json: { message: "The message is #{input_value}." }
-  # end
-
-  def one_movie
-    input_value = params["title"]
-    render json: Movie.find_by(title: input_value)
+  def index
+    movie = Movie.all
+    render json: movie.as_json
   end
 
-  def all_movies
-    render json: Movie.all
+  def create
+    movie = Movie.new(
+      title: params["title"],
+      year: params["year"],
+      plot: params["plot"],
+    )
+    movie.save
+    render json: movie.as_json
   end
 
-  # def all_actors
-  #   render json: Actor.all
-  # end
-
-  def actor_query
-    input_id = params["id"].to_i
-    render json: Actor.find(input_id)
+  def show
+    movie = Movie.find(params[:id])
+    render json: movie.as_json
   end
 
-  def actor_segment
-    input_id = params["id"].to_i
-    render json: Actor.find(input_id)
+  def update
+    movie = Movie.find(params[:id])
+    movie.title = params["title"] || movie.title
+    movie.year = params["year"] || movie.year
+    movie.plot = params["plot"] || movie.plot
+    movie.save
+    render json: movie.as_json
   end
 
-  def actor_body
-    input_id = params["id"].to_i
-    render json: Actor.find(input_id)
+  def destroy
+    movie = Movie.find(params[:id])
+    movie.destroy
+    render json: { message: "Movie deleted!" }
   end
 end
