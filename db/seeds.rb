@@ -11,6 +11,7 @@ Actor.destroy_all
 actor1 = Actor.create({ first_name: "Benedict", last_name: "Cumberbatch", known_for: "Sherlock" })
 actor2 = Actor.create({ first_name: "Brad", last_name: "Pitt", known_for: "Meet Joe Black" })
 actor3 = Actor.create({ first_name: "Gina", last_name: "Davis", known_for: "The Fly" })
+actor4 = Actor.create({ first_name: "Robin", last_name: "Williams", known_for: "Dead Poets Society" })
 
 Movie.destroy_all
 
