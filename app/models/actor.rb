@@ -1,5 +1,6 @@
 class Actor < ApplicationRecord
-  belongs_to :movie  #returns hash of a single movie
+  belongs_to :movie  #returns a hash of a single movie
+
   validates :first_name, length: { minimum: 2 }
   validates :last_name, length: { minimum: 2 }
   validates :known_for, presence: true
