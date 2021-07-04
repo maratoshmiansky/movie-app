@@ -4,6 +4,11 @@ class ActorsController < ApplicationController
     render json: actors
   end
 
+  def show
+    actor = Actor.find(params[:id])
+    render json: actor
+  end
+
   def create
     actor = Actor.new(
       first_name: params[:first_name],
@@ -18,11 +23,6 @@ class ActorsController < ApplicationController
     else
       render json: { errors: actor.errors.full_messages }, status: :unprocessable_entity
     end
-  end
-
-  def show
-    actor = Actor.find(params[:id])
-    render json: actor
   end
 
   def update

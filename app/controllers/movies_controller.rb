@@ -4,6 +4,11 @@ class MoviesController < ApplicationController
     render json: movies
   end
 
+  def show
+    movie = Movie.find(params[:id])
+    render json: movie
+  end
+
   def create
     movie = Movie.new(
       title: params[:title],
@@ -17,11 +22,6 @@ class MoviesController < ApplicationController
     else
       render json: { errors: movie.errors.full_messages }, status: :unprocessable_entity
     end
-  end
-
-  def show
-    movie = Movie.find(params[:id])
-    render json: movie
   end
 
   def update
