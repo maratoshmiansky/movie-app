@@ -8,7 +8,7 @@ class Movie < ApplicationRecord
   validates :plot, length: { minimum: 3 }
   # validates :director, length: { minimum: 2 }
 
-  def genre_names # should this be added to the movies_serializer?
-    genres.first.name  # this seems to work, but why do I need .first before .name?
+  def genre_names
+    genres.map { |genre| genre[:name] }
   end
 end
