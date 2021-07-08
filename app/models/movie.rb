@@ -9,6 +9,6 @@ class Movie < ApplicationRecord
   # validates :director, length: { minimum: 2 }
 
   def genre_names
-    genres.map { |genre| genre[:name] }
+    genres.map { |genre| genre[:name] } # returns an array of genre names
   end
 end
