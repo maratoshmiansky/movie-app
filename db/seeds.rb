@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Movie.create!([
-  { title: "Awakenings", year: 1990, plot: "A frustrated doctor in the Bronx in 1969 helps a bunch of catatonic patients awaken with the help of the drug L-Dopa." },
-  { title: "What Dreams May Come", year: 1998, plot: "A doctor loses his children to a car crash and his wife to suicide, and then later also dies in a car crash.  He dies but continues to exist in a heavenly afterlife created by his imagination.  He then seeks out his wife, who is trapped in Hell, and finds his children along the way." },
-  { title: "The Birdcage", year: 1996, plot: "A gay couple in FLorida tries to cope with meeting their son's fiancee's right-wing family." },
+  { title: "Awakenings", year: 1990, plot: "A frustrated doctor in the Bronx in 1969 helps a bunch of catatonic patients awaken with the help of the drug L-Dopa.", director: "Penny Marshall" },
+  { title: "What Dreams May Come", year: 1998, plot: "A doctor loses his children to a car crash and his wife to suicide, and then later also dies in a car crash.  He dies but continues to exist in a heavenly afterlife created by his imagination.  He then seeks out his wife, who is trapped in Hell, and finds his children along the way.", director: "Vincent Ward" },
+  { title: "The Birdcage", year: 1996, plot: "A gay couple in Florida tries to cope with meeting their son's fiancee's right-wing family.", director: "Mike Nichols" },
 ])
 
 Actor.create!([
